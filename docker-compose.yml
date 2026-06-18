@@ -51,7 +51,7 @@ services:
     working_dir: /service
     volumes:
       - ./src/ai_service:/service
-    command: ["python", "main.py"]
+    command: ["sh", "-c", "pip install fastapi uvicorn pydantic requests && python main.py"]
     networks:
       - team-internal
     healthcheck:
